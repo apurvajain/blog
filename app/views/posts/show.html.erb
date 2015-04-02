@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @post.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+  <h1>Comments <%= @post.comments.count %></h1>
+<% @post.comments.each do |comment| %>
+<div style="width: 300px; background-color: white">
+
+  <span style="float: right"><%= link_to 'X', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    <b>Name:</b>
+    <%= comment.author_name %>
+  </p>
+  <p>
+    <b>Comment:</b>
+    <%= comment.comment_content %>
+  </p>
+  </div>
+<% end %>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %> | 
+<%= link_to 'Comment', new_post_comment_path(@post.id) %>
+

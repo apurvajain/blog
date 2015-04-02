@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @comment.author_name %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @post.comment_content %>
+</p>
+
+<%= link_to 'Back', posts_path %>
