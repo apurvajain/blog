@@ -15,5 +15,4 @@
 //= require_tree .
 //= require highcharts
 //= require exporting
-//= require chart
-
+//= require lodash.min
